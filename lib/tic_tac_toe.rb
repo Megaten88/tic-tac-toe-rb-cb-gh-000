@@ -10,6 +10,9 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+def input_to_index(input)
+  input.to_i-1
+end
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
