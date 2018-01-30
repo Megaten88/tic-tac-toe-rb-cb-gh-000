@@ -97,7 +97,7 @@ end
 def turn_count(board)
   count=0
   for value in board do
-    value!=" " ? count+=1: count = count
+    value!=" " ? count+=1:
   end
   return count
 end
