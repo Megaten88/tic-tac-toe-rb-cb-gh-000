@@ -81,7 +81,7 @@ def winner(board)
   winner
 end
 
-def turn(board)
+def turn(board,player)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
@@ -106,9 +106,12 @@ def current_player(board)
 end
 
 def play(board)
-  count = 1
-  while count<=9
-    turn(board)
-    count+=1
+  until over?(board)
+    turn
+  end
+  if won?(board)
+    puts "Congratulations #{winner(board)}"
+  else
+    puts "The game was a draw!"
   end
 end
