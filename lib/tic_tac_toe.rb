@@ -10,9 +10,21 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+def valid_move?(board, index)
+  if index.between?(0,8) && position_taken?(board,index) == false
+    return true
+  end
+  return false
+end
+
 def input_to_index(input)
   input.to_i-1
 end
+
+def move(board,index,value="X")
+  
+end
+
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
